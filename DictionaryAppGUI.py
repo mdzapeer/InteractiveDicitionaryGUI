@@ -19,7 +19,7 @@ class dictionary:
     #fucntion to check partial mathes and loop to ask correct word
     def partmatch (self,word):       
         self.word=str(word[0])
-        windowUI.output("Did you want to see the meaning for '%s' \nYes or No?\n" %self.word)
+        windowUI.output("Did you want to see the meaning for '%s'" %self.word)
         # userin=input ("Did you want to see the meaning for '%s' \nYes or No?\n" %word
         # userin=windowUI.submit()
         # userin=userin.lower()
