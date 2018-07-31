@@ -2,6 +2,7 @@ import json
 import difflib
 from difflib import get_close_matches
 from tkinter import *
+from tkinter import messagebox
 from tkinter import ttk
 
 data=json.load(open("data.json"))
@@ -20,6 +21,14 @@ class dictionary:
     def partmatch (self,word):       
         self.word=str(word[0])
         windowUI.output("Did you want to see the meaning for '%s'" %self.word)
+        userres=messagebox.askyesno(title="Confirm word", message="Did you want to see the meaning for '%s'" %word)
+        if userres == True:
+            return (data[self.word])
+        elif userres == False:
+            messagebox.showinfo(title="Confirm word", message="Enter the word")
+        else:
+            while userres != True or userres != False:
+                windowUI.output("Enter the word")      
         # userin=input ("Did you want to see the meaning for '%s' \nYes or No?\n" %word
         # userin=windowUI.submit()
         # userin=userin.lower()
